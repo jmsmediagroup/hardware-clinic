@@ -11,8 +11,9 @@ program, built from scratch with no libraries. Works on any UEFI PC and Intel Ma
 ![License](https://img.shields.io/badge/license-proprietary%20freeware-blue)
 
 <p align="center">
-  <img src="screenshots/menu.png" alt="Hardware Clinic main menu: grouped tools for check, drives, fix, output and system, with a details pane" width="820">
+  <img src="screenshots/demo.gif" alt="Hardware Clinic demo: the boot menu, then System info, Drive health with three HEALTHY drives, and a four-core memory test that passes clean" width="820">
 </p>
+<p align="center"><sub>The rc7 image booted in QEMU/OVMF: menu → System info → Drive health → Memory test on 4 cores. Same UI on real hardware.</sub></p>
 
 > ⚠️ **This tool can permanently erase data.** It includes secure-wipe, drive-clone and
 > partition-repair tools that overwrite disks. It is provided **as-is, with no warranty**, and the
