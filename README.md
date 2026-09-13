@@ -1,12 +1,12 @@
 # Hardware Clinic
 
 **Boot-and-test hardware diagnostics on a USB stick.** Plug it in, boot, and in about one second you
-have a full diagnostic bench — no Windows, no Linux, no install, ~90 KB. Works on any UEFI PC and
-Intel Mac.
+have a full diagnostic bench — no Windows, no Linux, no install. The whole thing is one ~340 KB UEFI
+program, built from scratch with no libraries. Works on any UEFI PC and Intel Mac.
 
 [![Latest release](https://img.shields.io/github/v/release/jmsmediagroup/hardware-clinic?include_prereleases&sort=semver&label=release)](https://github.com/jmsmediagroup/hardware-clinic/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/jmsmediagroup/hardware-clinic/total?label=downloads)](https://github.com/jmsmediagroup/hardware-clinic/releases)
-![Size](https://img.shields.io/badge/image-~90%20KB-brightgreen)
+![Program size](https://img.shields.io/badge/program-~340%20KB-brightgreen)
 ![Platform](https://img.shields.io/badge/platform-UEFI%20%C2%B7%20PC%20%C2%B7%20Intel%20Mac-blueviolet)
 ![License](https://img.shields.io/badge/license-proprietary%20freeware-blue)
 
