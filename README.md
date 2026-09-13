@@ -1,12 +1,23 @@
 # Hardware Clinic
 
-**Boot-and-test hardware diagnostics on a USB stick.** Plug it in, boot, and in one second you have a
-full diagnostic bench — no Windows, no Linux, no install. Works on any UEFI PC and Intel Mac.
+**Boot-and-test hardware diagnostics on a USB stick.** Plug it in, boot, and in about one second you
+have a full diagnostic bench — no Windows, no Linux, no install, ~90 KB. Works on any UEFI PC and
+Intel Mac.
+
+[![Latest release](https://img.shields.io/github/v/release/jmsmediagroup/hardware-clinic?include_prereleases&sort=semver&label=release)](https://github.com/jmsmediagroup/hardware-clinic/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/jmsmediagroup/hardware-clinic/total?label=downloads)](https://github.com/jmsmediagroup/hardware-clinic/releases)
+![Size](https://img.shields.io/badge/image-~90%20KB-brightgreen)
+![Platform](https://img.shields.io/badge/platform-UEFI%20%C2%B7%20PC%20%C2%B7%20Intel%20Mac-blueviolet)
+![License](https://img.shields.io/badge/license-proprietary%20freeware-blue)
+
+<p align="center">
+  <img src="screenshots/menu.png" alt="Hardware Clinic main menu: grouped tools for check, drives, fix, output and system, with a details pane" width="820">
+</p>
 
 > ⚠️ **This tool can permanently erase data.** It includes secure-wipe, drive-clone and
 > partition-repair tools that overwrite disks. It is provided **as-is, with no warranty**, and the
 > author is **not liable for any data loss or damage**. You are responsible for what you run it on.
-> See LICENSE.
+> See [LICENSE](LICENSE).
 
 ## What it does
 - **Quick check** — a two-minute PASS / WORN / FAULT verdict on RAM, drives, cooling, video memory,
@@ -19,8 +30,18 @@ full diagnostic bench — no Windows, no Linux, no install. Works on any UEFI PC
 - **Certify** — secure wipe with a signed certificate (text, printable HTML, and an on-screen QR a
   phone can verify), for resale and disposal.
 
+Every result is signed with the stick's own key; `tools/verify.py` checks any report, certificate or
+QR later.
+
+## Screenshots
+
+| Built-in guide — which tool for which complaint (press `?`) | Structured, signed results (Hardware scan) |
+|:---:|:---:|
+| <img src="screenshots/help.png" alt="Help overlay grouping tools by symptom: won't boot, crashes sometimes, before it leaves" width="420"> | <img src="screenshots/scan.png" alt="Hardware scan results: sensors, peripherals, PCIe, error log, network, security and storage layout" width="420"> |
+
 ## Get it
-1. Download `hardware-clinic-<version>.img` (and check it against `SHA256SUMS`).
+1. Download `hardware-clinic-<version>.img` from the [latest release](https://github.com/jmsmediagroup/hardware-clinic/releases/latest)
+   and check it against `SHA256SUMS`.
 2. Write it to a USB stick (**this erases the stick**):
    - **macOS:** `diskutil unmountDisk /dev/diskN && sudo dd if=hardware-clinic-<version>.img of=/dev/rdiskN bs=1m`
    - **Linux:** `sudo dd if=hardware-clinic-<version>.img of=/dev/sdX bs=1M conv=fsync`
@@ -38,8 +59,8 @@ are unavailable until the mode is switched to AHCI. The tool tells you when this
 ## Free vs. commercial
 Free for personal, non-commercial use. **Repair shops, IT departments and any business use need a
 licence** — which also unlocks Secure-Boot-signed builds (no BIOS changes on customer machines),
-the fleet/unattended features, updates and support. See COMMERCIAL.md.
+the fleet/unattended features, updates and support. See [COMMERCIAL.md](COMMERCIAL.md).
 
 ## Licence
-Proprietary; free for personal use only. Not open source. See LICENSE and NOTICE.
+Proprietary; free for personal use only. Not open source. See [LICENSE](LICENSE) and [NOTICE](NOTICE).
 Bundled third-party components (TweetNaCl, qrcodegen, DejaVu font) keep their own licences.
