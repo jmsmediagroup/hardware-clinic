@@ -1,0 +1,67 @@
+name: Bug report
+description: Something behaved wrongly — a crash, a hang, a wrong reading, a broken screen.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **If a wipe reported PASS while data was still readable, or the tool wrote to a drive you did not select — stop.** That is a critical bug; report it privately as described in [SECURITY.md](https://github.com/jmsmediagroup/hardware-clinic/blob/main/SECURITY.md), not here.
+
+        For "it works but reads something wrong on my machine", the [machine report](https://github.com/jmsmediagroup/hardware-clinic/issues/new?template=machine-report.yml) form is the better fit.
+  - type: input
+    id: machine
+    attributes:
+      label: Machine
+      placeholder: Lenovo ThinkPad T480, Intel Core i5-8250U
+    validations:
+      required: true
+  - type: dropdown
+    id: version
+    attributes:
+      label: Hardware Clinic version
+      options:
+        - 1.0.0-rc7
+        - older (say which below)
+    validations:
+      required: true
+  - type: dropdown
+    id: tool
+    attributes:
+      label: Which tool
+      options:
+        - Boot / menu itself
+        - Quick check
+        - System info
+        - Hardware scan
+        - Memory test
+        - Stress test / Soak test
+        - Sensors
+        - Display & video / Keyboard map / USB ports
+        - Drive health / Self-test / Surface read / Capacity test
+        - File rescue
+        - Clone drive
+        - Boot repair / Partition table
+        - Secure wipe
+        - Job intake / Save / HTML / JSON
+        - Unattended mode (CLINIC.CFG) / upload
+        - Command shell
+        - tools/verify.py or tools/flash.sh
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you saw. If it hung, what was the last line on screen?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+  - type: textarea
+    id: files
+    attributes:
+      label: Files
+      description: Drag in REPORT-<serial>.TXT / RESULT-<serial>.JSON from the stick (zip them if GitHub refuses), or a photo of the screen.

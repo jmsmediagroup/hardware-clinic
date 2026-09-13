@@ -51,11 +51,41 @@ QR later.
    Intel Mac — hold **Option** and choose EFI Boot. If it doesn't appear, disable **Secure Boot** in
    firmware settings (this free build isn't Microsoft-signed).
 
+**Requirements:** a 64-bit UEFI PC, or an **Intel** Mac. **Not Apple Silicon** (M1–M4): those Macs refuse
+to boot non-Apple systems from USB — run it in UTM or QEMU there instead. Secure Boot must be off for
+this free build (signed builds come with the commercial licence).
+
 Press **?** in the menu for a guide to which tool fits which problem.
 
 **Known limitation:** on laptops whose BIOS sets the storage mode to **Intel RST / RAID** (many Acer,
 Dell, HP models), the SSD is hidden from every standard interface, so SMART and drive self-tests
 are unavailable until the mode is switched to AHCI. The tool tells you when this is the case.
+
+## Tested on real hardware
+
+Every build runs a QEMU/OVMF regression bench (NVMe + SATA SMART, 4-core memory test, NTFS / ext4 /
+APFS rescue, GPT rebuild, wipe-all, signed upload). Real firmware is where the surprises live, and the
+machines it has run on so far are in [COMPATIBILITY.md](COMPATIBILITY.md) — one laptop so far, and that
+one produced three fixes.
+
+**Booted it on something?** Send a [machine report](https://github.com/jmsmediagroup/hardware-clinic/issues/new?template=machine-report.yml)
+— two minutes, hardware identifiers only. Questions go in
+[Discussions](https://github.com/jmsmediagroup/hardware-clinic/discussions).
+
+## How it compares
+
+| | Hardware Clinic | Hiren's BootCD PE | Ultimate Boot CD | MemTest86 | Parted Magic | DBAN | ShredOS |
+|---|---|---|---|---|---|---|---|
+| Built on | From-scratch UEFI app, no OS underneath | Windows PE | DOS / Linux tools, legacy BIOS | UEFI app | Linux live | Linux, legacy BIOS | Linux (nwipe) |
+| Time to a working screen | about a second after POST | minutes | seconds to a minute | seconds | under a minute | under a minute | under a minute |
+| Covers | diagnose, rescue, clone, boot / partition repair, wipe — one tool | very broad third-party toolkit | broad, aging toolkit | memory only | partitioning, erase, recovery | wipe only | wipe only |
+| Intel Macs | yes | PC-focused | legacy BIOS only | yes | yes | legacy BIOS only | UEFI + legacy; untested on Macs |
+| Wipe certificate | Ed25519-signed text + HTML + on-screen QR | no | no | n/a | erase report | no | PDF report |
+| Cost | free for personal use; commercial licence | free | free | free / Pro | from $15 | free, unmaintained since 2015 | free, open source |
+
+The honest trade-off: Hardware Clinic is closed source and can only see what the firmware exposes; the
+Linux-based tools carry drivers for far more hardware. Competitor details as of September 2026, from
+their public pages — corrections welcome, open an issue.
 
 ## Free vs. commercial
 Free for personal, non-commercial use. **Repair shops, IT departments and any business use need a

@@ -1,0 +1,96 @@
+name: Machine report
+description: How Hardware Clinic behaved on a real machine — the most valuable thing you can send.
+title: "[Machine] <manufacturer> <model>"
+labels: ["machine-report"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks — every report becomes a row in [COMPATIBILITY.md](https://github.com/jmsmediagroup/hardware-clinic/blob/main/COMPATIBILITY.md) and drives the next fix.
+        Boot the stick, run **Quick check** and **Sensors**, then **Save all** (`s`). The files are in the root of the stick.
+        The JSON contains hardware identifiers only, no personal data — delete the serial number if you prefer.
+  - type: input
+    id: machine
+    attributes:
+      label: Machine
+      description: Manufacturer and exact model, from System info or the sticker on the bottom.
+      placeholder: Acer Nitro 5 AN515-55
+    validations:
+      required: true
+  - type: input
+    id: cpu
+    attributes:
+      label: CPU
+      placeholder: Intel Core i5-10300H
+  - type: input
+    id: firmware
+    attributes:
+      label: Firmware / BIOS version
+      description: Shown on the System info screen.
+      placeholder: Insyde V1.15
+  - type: dropdown
+    id: version
+    attributes:
+      label: Hardware Clinic version
+      description: Top-left of the screen.
+      options:
+        - 1.0.0-rc7
+        - older (say which under "What didn't match reality")
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: Machine type
+      options:
+        - Laptop
+        - Desktop
+        - Mini PC / NUC
+        - Server
+        - Intel Mac
+        - Virtual machine
+    validations:
+      required: true
+  - type: dropdown
+    id: storage
+    attributes:
+      label: BIOS storage mode
+      description: Matters for SMART. Under SATA / Storage in the firmware settings. "Intel RST / RAID" hides the SSD from every standard interface.
+      options:
+        - AHCI
+        - Intel RST / RAID
+        - Don't know
+  - type: checkboxes
+    id: ran
+    attributes:
+      label: What you ran
+      options:
+        - label: Quick check
+        - label: Sensors
+        - label: Drive health (SMART)
+        - label: Memory test
+        - label: Stress test
+        - label: Hardware scan
+        - label: Display & video
+        - label: Something else (say what below)
+  - type: textarea
+    id: worked
+    attributes:
+      label: What worked
+      placeholder: Booted from the F12 menu in about a second. Quick check PASS. Memory test 16 GB clean on 8 threads. Stress test 70 °C.
+  - type: textarea
+    id: wrong
+    attributes:
+      label: What didn't match reality
+      description: A drive with no SMART, a fan that spins but reads 0, a temperature that can't be right, a wrong verdict, a screen that looked broken, a key that did nothing.
+  - type: textarea
+    id: files
+    attributes:
+      label: RESULT-<serial>.JSON
+      description: Drag the file from the stick into this box. If GitHub refuses the .JSON, zip it first. A phone photo of a screen that looked wrong is welcome too.
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Compatibility list
+      options:
+        - label: You may list this machine (make, model, what worked) in COMPATIBILITY.md
