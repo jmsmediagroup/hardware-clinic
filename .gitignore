@@ -1,0 +1,18 @@
+# Distributed via GitHub Releases, not committed (keeps the repo lean)
+*.img
+*.iso
+*.zip
+
+# NEVER commit — signing keys, per-stick config, signed outputs, secrets
+KEY.BIN
+PUBKEY.HEX
+keys/
+*.key
+*.pem
+*.SIG
+CLINIC.CFG
+.env
+.env.*
+
+# OS cruft
+.DS_Store

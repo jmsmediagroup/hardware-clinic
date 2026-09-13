@@ -1,0 +1,44 @@
+Hardware Clinic — End User Licence Agreement
+Copyright (c) 2026 Johan Struijk. All rights reserved.
+
+This is proprietary software. It is provided free of charge for personal, non-commercial
+use only. It is NOT open source. Read this before using it.
+
+1. PERMITTED — free of charge
+   You may download, boot, and use Hardware Clinic on computers you own or personally
+   service, for personal and non-commercial purposes, including one-off help for friends
+   and family. You may make personal backup copies of the USB image.
+
+2. NOT PERMITTED without a commercial licence
+   - Using it in or for a business, including a repair shop, IT department, refurbisher,
+     managed-service provider, or any paid service to third parties.
+   - Selling, renting, sublicensing, or charging for it or for access to it.
+   - Redistributing it (hosting the image for download, bundling it, putting it on sticks
+     you sell or give away as part of a service).
+   - Reverse-engineering, decompiling, disassembling, or deriving the source code.
+   - Removing or altering this licence, the signatures, or the on-screen identification.
+   Commercial and redistribution licences are available — see COMMERCIAL.md.
+
+3. NO WARRANTY
+   HARDWARE CLINIC IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+   INCLUDING BUT NOT LIMITED TO MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND
+   NON-INFRINGEMENT.
+
+4. LIMITATION OF LIABILITY — READ THIS
+   Hardware Clinic can permanently and irreversibly destroy data: it erases drives, rewrites
+   partition tables, and repairs sectors. You choose what to run it on, and you bear the
+   consequences. TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE AUTHOR IS NOT LIABLE FOR ANY
+   LOSS OF DATA, LOSS OF HARDWARE, LOSS OF PROFITS, BUSINESS INTERRUPTION, OR ANY DIRECT,
+   INDIRECT, INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES ARISING FROM THE USE OF, OR
+   INABILITY TO USE, THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+   By using it you accept that you do so entirely at your own risk.
+
+5. BUNDLED THIRD-PARTY COMPONENTS
+   This software includes components under their own licences; see NOTICE.txt. Those
+   components remain under their original licences. This EULA governs Hardware Clinic itself.
+
+6. TERMINATION
+   This licence ends automatically if you breach it. On termination you must stop using and
+   destroy your copies.
+
+Contact: johan@struijk.it  ·  Commercial licensing: johan@struijk.it

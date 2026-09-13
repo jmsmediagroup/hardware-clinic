@@ -1,0 +1,8 @@
+Hardware Clinic bundles these third-party components, used under their own licences.
+They remain under those licences; the Hardware Clinic EULA (LICENSE`) does not override them.
+
+- TweetNaCl (crypto): public domain. Daniel J. Bernstein, Tanja Lange, Peter Schwabe, et al.
+- qrcodegen (QR encoder): MIT License. Copyright (c) Project Nayuki.
+- Bitmap font glyphs rasterized from DejaVu Sans Mono: Bitstream Vera Fonts Licence.
+
+Full licence texts are available from each project. No endorsement by these authors is implied.
