@@ -34,6 +34,7 @@ body:
       label: Hardware Clinic version
       description: Top-left of the screen.
       options:
+        - 1.0.0-rc8
         - 1.0.0-rc7
         - older (say which under "What didn't match reality")
     validations:

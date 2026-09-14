@@ -1,5 +1,5 @@
 Hardware Clinic bundles these third-party components, used under their own licences.
-They remain under those licences; the Hardware Clinic EULA (LICENSE`) does not override them.
+They remain under those licences; the Hardware Clinic EULA (LICENSE.txt) does not override them.
 
 - TweetNaCl (crypto): public domain. Daniel J. Bernstein, Tanja Lange, Peter Schwabe, et al.
 - qrcodegen (QR encoder): MIT License. Copyright (c) Project Nayuki.

@@ -54,6 +54,7 @@ IDENTIFY DEVICE.
   ],
   "storage":  { "encrypted_volumes": 1, "installed_os": "macOS 14.6.1 + Windows" },
   "job":      { "ticket": "T4421", "customer": "J. Smith" },
+  "savefiles": { "files_found": 3247, "bytes_found": 15234567890, "photos": 2410, "documents": 812, "videos": 25, "files_saved": 3247, "bytes_saved": 15234567890, "skipped": 0, "partial": 0, "result": "SAVED" },
   "capacity": { "reported_bytes": 1099511627776, "stamps": 65536, "stamps_ok": 1980, "real_bytes_estimate": 33218887680, "result": "COUNTERFEIT" },
   "usb_ports": { "tested": 4, "working": 3 },
   "sensors":  { "chip": "Nuvoton NCT6798D", "fan1_rpm": 1180, "fan2_rpm": 0, "temp1_c": 38, "vcore_mv": 1024, "fans_reporting": 1 },

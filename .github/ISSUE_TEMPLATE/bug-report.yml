@@ -21,6 +21,7 @@ body:
     attributes:
       label: Hardware Clinic version
       options:
+        - 1.0.0-rc8
         - 1.0.0-rc7
         - older (say which below)
     validations:

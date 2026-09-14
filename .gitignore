@@ -2,6 +2,7 @@
 *.img
 *.iso
 *.zip
+*.exe
 
 # NEVER commit — signing keys, per-stick config, signed outputs, secrets
 KEY.BIN

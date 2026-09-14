@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.0-rc8 — Save my files
+- **One-click stick makers**: `Make-Hardware-Clinic-Stick.exe` (Windows, self-contained, USB-only, admin-elevated, locked writes) and `Make Hardware Clinic Stick.command` (macOS, native dialogs). Both beta: built and structurally verified, not yet run on real machines
+- **Save my files**: new first menu item and `mode = savefiles`. Surveys every user's folders on every NTFS/ext4/APFS drive and counts by kind (photos, videos, documents, music), estimates time, waits for a USB drive to be plugged in (hot-plug detection), checks free space, copies with a progress bar and ETA, and ends with a plain-language result. Encrypted drives explained in plain words. Nothing on the computer is written
+- Filesystem readers report file sizes (for the survey and progress)
+- The technician tool is now **Advanced rescue** (key `a`)
+- Regression: 3g wizard scenario with a hot-plugged drive, byte-identical check (40 checks)
+
 ## 1.0.0-rc7 — fixes from the first real machine (Acer Nitro AN515-55, i5-10300H)
 - **SMART behind Intel RST**: the RAID-mode controller (8086:282a and friends) is now detected and named, with the exact BIOS change needed (storage mode → AHCI, with the Windows safe-mode step) instead of "no drives found"
 - **AER**: the same correctable bit on every endpoint is recognised as ASPM link-power noise and no longer counted as errors (the Nitro logged 5/5 identical)
@@ -17,7 +24,7 @@
 ## 1.0.0-rc5 — release plumbing
 - `soak_minutes` for short burn-ins; soak loop covered by the regression suite (41 checks)
 - Text-mode fallback verified over a serial console (headless servers, KVM consoles)
-- `make release` (image, ISO, BOOTX64.EFI, SHA256SUMS, docs, tools, zip); `tools/flash.sh` with removable-only safety; LICENSE; CONTRIBUTING.md
+- `make release` (image, ISO, BOOTX64.EFI, SHA256SUMS, docs, tools, zip); `tools/flash.sh` with removable-only safety; LICENSE (MIT); CONTRIBUTING.md
 - Menu grouping fix (USB ports under CHECK)
 
 ## 1.0.0-rc4 — paper that verifies

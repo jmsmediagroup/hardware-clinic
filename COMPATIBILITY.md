@@ -7,6 +7,11 @@ feature is unavailable on that machine, and that is exactly what this list recor
 **Add yours:** [machine report](https://github.com/jmsmediagroup/hardware-clinic/issues/new?template=machine-report.yml)
 — two minutes; the JSON carries hardware identifiers only.
 
+> **Status for 1.0.0-rc8:** the rc8 build has passed the full QEMU/OVMF regression bench but has **not
+> yet been run on a physical machine** — the row below was produced on rc7, and the "Save my files"
+> wizard and both one-click stick makers are new in rc8 and real-hardware-untested. If you boot rc8 on
+> anything, your report is the most useful thing in this project right now.
+
 Legend: ✅ works · ⚠️ works after a setting change · ❌ not available on this machine · — not tested yet
 
 ## Laptops

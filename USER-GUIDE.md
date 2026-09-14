@@ -13,8 +13,10 @@ read or changed unless you explicitly choose **Secure wipe**.
 You need a USB stick of 64 MB or larger (anything you own will do) and the file `myos.img`.
 **Everything on the stick will be erased.**
 
-**Either (recommended)** — `tools/flash.sh hardware-clinic.img` lists only removable drives, refuses
-anything else, and asks you to type the device name twice.
+**Easiest** — the stick makers in the release folder: `Make-Hardware-Clinic-Stick.exe` on Windows
+(double-click, pick the stick, confirm) or `Make Hardware Clinic Stick.command` on macOS (double-click;
+right-click → Open the first time). Both list USB sticks only. On Linux, `tools/flash.sh` does the same
+in the terminal and asks you to type the device name twice.
 
 **macOS**
 ```
@@ -82,7 +84,8 @@ run anything, a **THIS SESSION** line under the menu shows the verdicts so far.
 | **Display & video** | VRAM test: five patterns written through the framebuffer and read back (catches failing video memory). Then display patterns for your eyes: solid colours, a 1-pixel checkerboard (stuck/dead pixels), 1-pixel lines (scaling, tearing), a grey ramp (banding), colour bars — with the panel's refresh rate from EDID. Then three beeps from the PC speaker. | 2 minutes |
 | **Keyboard map** | Draws the keyboard and lights each key as you press it; lists the ones never pressed. Shift, Ctrl, Alt and Caps can't be sensed by firmware — shifted letters test Shift indirectly. | 1 min |
 | **Self-test** | Runs the drive's own built-in short (2 min) or extended (hours) self-test and reports its verdict — the result manufacturers ask for in warranty claims. | 2 min+ |
-| **File rescue** | Copies files off a Windows (NTFS), Linux (ext4) or Mac (APFS) drive onto any FAT-formatted drive — a second USB stick, or this one if built large. Choose the users' Desktop/Documents/Pictures/Downloads/Videos/Music, a folder you type, or the whole volume. Unreadable sectors leave zero-filled gaps and are logged rather than stopping the copy. Compressed and EFS-encrypted files are skipped with a reason. Files keep their original modification and creation dates. Writes a signed `RESCUE-*.TXT` log. | drive speed |
+| **Save my files** | The plain-language front door (see §3a): find, count, wait for a USB drive, copy, report. | minutes |
+| **Advanced rescue** | Copies files off a Windows (NTFS), Linux (ext4) or Mac (APFS) drive onto any FAT-formatted drive — a second USB stick, or this one if built large. Choose the users' Desktop/Documents/Pictures/Downloads/Videos/Music, a folder you type, or the whole volume. Unreadable sectors leave zero-filled gaps and are logged rather than stopping the copy. Compressed and EFS-encrypted files are skipped with a reason. Files keep their original modification and creation dates. Writes a signed `RESCUE-*.TXT` log. | drive speed |
 | **Clone drive** | Sector-by-sector copy to another drive of equal or larger size. Unreadable sectors are bisected, zero-filled on the destination and logged. Verified by sampling; writes a signed `CLONE-*.TXT` log. When the destination is larger, the backup partition table is moved to its end so the OS sees a clean disk and the extra space can be added to a partition. | drive speed |
 | **Partition table** | Checks both copies of the GPT and their checksums. Rebuilds as GPT or, for legacy BIOS disks, MBR. Repairs a backup table that isn't at the end of the disk (typical after cloning to a larger drive). When the table is gone or damaged, scans the disk for NTFS, ext4, FAT, exFAT and BitLocker signatures and rewrites the table from what it finds — the files inside are untouched. | seconds; minutes to scan |
 | **Boot repair** | Lists the firmware's boot entries (flags stale ones), finds Windows/Linux loaders on the EFI partition, and can add an entry and make it first, or reorder existing ones. Fixes "No bootable device" without reinstalling. | instant |
@@ -92,6 +95,17 @@ run anything, a **THIS SESSION** line under the menu shows the verdicts so far.
 | **Save JSON** | Writes structured results for spreadsheets and fleet tools. | instant |
 | **Command shell** | Typed commands for power users (§7). | — |
 | **Reboot / Shut down** | Restart or power off. | — |
+
+## 3a. "My computer won't start and my photos are on it"
+
+That is the first item on the menu: **Save my files** (key `f`). It is written for someone who has
+never used a tool like this. It looks for the personal folders on the computer's drive (Windows,
+Mac or Linux), counts what it finds — "2,410 photos, 812 documents, 14 GB, about 6 minutes" — then
+asks for a USB drive. Plug one in and it notices; it checks there is enough room; one key starts
+the copy; a progress bar shows time remaining; and the result says exactly where the files are.
+Nothing on the computer is changed. If the drive is FileVault- or BitLocker-encrypted it says so
+in plain words instead of failing. Technicians who want to pick a folder or a whole volume use
+**Advanced rescue** (key `a`) instead.
 
 ## 4. Reading the Quick check verdict
 
@@ -158,7 +172,7 @@ the disk, its loader appears under *loaders found* and one keypress writes a fre
 loader isn't found but the OS partition exists (Hardware scan shows NTFS), the EFI partition itself is
 damaged and needs the OS's own repair tools.
 
-**"My photos are on it and it won't boot"** — **File rescue** first, before any other test. Plug in a
+**"My photos are on it and it won't boot"** — **Save my files** first, before any other test. Plug in a
 FAT32 USB drive with enough space, pick the customer's Windows volume, choose *User folders*. Everything
 readable is copied; the log lists anything that wasn't. Do this before Surface read or Clone, because
 every hour of reading a failing drive is an hour closer to it dying.

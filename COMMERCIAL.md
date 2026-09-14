@@ -1,6 +1,7 @@
 # Commercial & redistribution licensing
 
-Hardware Clinic is free for personal, non-commercial use (see LICENSE). Anything beyond that needs a licence. That includes:
+Hardware Clinic is free for personal, non-commercial use (see LICENSE.txt). Anything beyond that
+needs a licence. That includes:
 
 - Using it in a repair shop, IT department, refurbisher, or managed-service provider
 - Any paid service where you run it on customers' machines
@@ -14,6 +15,7 @@ Hardware Clinic is free for personal, non-commercial use (see LICENSE). Anything
 - Priority updates and email support
 
 ## Pricing
-Per-technician annual licence for shops; site licence for larger fleets. Get in touch with your use case for a quote.
+Per-technician annual licence for shops; site licence for larger fleets. Get in touch with your
+use case for a quote.
 
 Contact: johan@struijk.it

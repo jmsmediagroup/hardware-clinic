@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Hardware Clinic app icon: microchip with a heartbeat pulse. Palette matches the UI. -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#172445"/>
+      <stop offset="1" stop-color="#0B1220"/>
+    </linearGradient>
+  </defs>
+
+  <!-- tile (corners outside it stay transparent) -->
+  <rect x="16" y="16" width="480" height="480" rx="100" fill="url(#bg)" stroke="#2A3A5C" stroke-width="4"/>
+
+  <!-- chip pins: three per side -->
+  <g fill="#C9D6EA">
+    <rect x="185" y="90"  width="22" height="46" rx="6"/>
+    <rect x="245" y="90"  width="22" height="46" rx="6"/>
+    <rect x="305" y="90"  width="22" height="46" rx="6"/>
+    <rect x="185" y="376" width="22" height="46" rx="6"/>
+    <rect x="245" y="376" width="22" height="46" rx="6"/>
+    <rect x="305" y="376" width="22" height="46" rx="6"/>
+    <rect x="90"  y="185" width="46" height="22" rx="6"/>
+    <rect x="90"  y="245" width="46" height="22" rx="6"/>
+    <rect x="90"  y="305" width="46" height="22" rx="6"/>
+    <rect x="376" y="185" width="46" height="22" rx="6"/>
+    <rect x="376" y="245" width="46" height="22" rx="6"/>
+    <rect x="376" y="305" width="46" height="22" rx="6"/>
+  </g>
+
+  <!-- chip body -->
+  <rect x="136" y="136" width="240" height="240" rx="30" fill="#0B1220" stroke="#C9D6EA" stroke-width="14"/>
+  <!-- pin-1 mark -->
+  <circle cx="170" cy="170" r="10" fill="#4B5D80"/>
+
+  <!-- heartbeat -->
+  <polyline points="160,256 200,256 214,236 226,256 244,256 262,196 282,316 298,256 352,256"
+            fill="none" stroke="#22C55E" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

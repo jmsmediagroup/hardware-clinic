@@ -56,6 +56,9 @@ Keys are case-sensitive; values are not quoted.
   panel EDID, Secure Boot/TPM, partitions and installed OS, SMART. No RAM test. Use for audits.
 - **`soak`** — memory test + 5-minute stress (+ surface read with `soak_surface = yes`) looping for
   `soak_hours` (default 8). Overnight burn-in for intake or for the intermittent-crash machine.
+- **`savefiles`** — the plain-language wizard, unattended: surveys every drive's user folders and
+  copies them to the first USB drive with enough room (or this stick). For a dedicated rescue
+  stick handed to a customer: `mode = savefiles`, `after = shutdown`.
 - **`rescue`** — every user's standard folders from every NTFS and ext4 volume, into
   `\RESCUE-<timestamp>\VOLn\<user>\...` on the destination. The go-to before a wipe-all when a
   department wants its files back, or for a repair counter that takes in a "won't boot" machine.
