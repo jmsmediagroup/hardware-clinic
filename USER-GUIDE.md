@@ -14,7 +14,7 @@ You need a USB stick of 64 MB or larger (anything you own will do) and the file 
 **Everything on the stick will be erased.**
 
 **Easiest** — the stick makers in the release folder: `Make-Hardware-Clinic-Stick.exe` on Windows
-(double-click, pick the stick, confirm) or `Make Hardware Clinic Stick.command` on macOS (double-click;
+(double-click, pick the stick, confirm) or `Make-Hardware-Clinic-Stick.command` on macOS (double-click;
 right-click → Open the first time). Both list USB sticks only. On Linux, `tools/flash.sh` does the same
 in the terminal and asks you to type the device name twice.
 
