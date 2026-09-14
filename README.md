@@ -58,7 +58,7 @@ then:
 - **Windows:** run `Make-Hardware-Clinic-Stick.exe`. It lists only USB sticks, shows the model and size,
   asks you to confirm, and writes the stick. (Windows will ask for administrator permission and may show
   a SmartScreen warning because the program is new and unsigned — choose *More info → Run anyway*.)
-- **macOS:** put `Make Hardware Clinic Stick.command` in the same folder as the `.img` and double-click it.
+- **macOS:** put `Make-Hardware-Clinic-Stick.command` in the same folder as the `.img` and double-click it.
   If macOS says it's from an unidentified developer: right-click → Open → Open. It uses the normal
   macOS dialogs and password prompt.
 - **Linux:** `tools/flash.sh hardware-clinic-<version>.img`.
