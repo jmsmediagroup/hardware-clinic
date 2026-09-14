@@ -92,6 +92,6 @@ Free for personal, non-commercial use. **Repair shops, IT departments and any bu
 licence** — which also unlocks Secure-Boot-signed builds (no BIOS changes on customer machines),
 the fleet/unattended features, updates and support. See [COMMERCIAL.md](COMMERCIAL.md).
 
-## Licence
+## License
 Proprietary; free for personal use only. Not open source. See [LICENSE](LICENSE) and [NOTICE](NOTICE).
 Bundled third-party components (TweetNaCl, qrcodegen, DejaVu font) keep their own licences.
