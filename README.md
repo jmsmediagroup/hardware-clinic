@@ -10,6 +10,18 @@ program, built from scratch with no libraries. Works on any UEFI PC and Intel Ma
 ![Platform](https://img.shields.io/badge/platform-UEFI%20%C2%B7%20PC%20%C2%B7%20Intel%20Mac-blueviolet)
 ![License](https://img.shields.io/badge/license-proprietary%20freeware-blue)
 
+## Download
+
+| Your computer | Download | Then |
+|---|---|---|
+| **Windows** | [**Make-Hardware-Clinic-Stick.exe**](https://github.com/jmsmediagroup/hardware-clinic/releases/latest/download/Make-Hardware-Clinic-Stick.exe) · 67 MB | Run it and pick your USB stick. |
+| **Mac** | [**Make-Hardware-Clinic-Stick.command**](https://github.com/jmsmediagroup/hardware-clinic/releases/latest/download/Make-Hardware-Clinic-Stick.command) **and** [**hardware-clinic-1.0.0-rc8.img**](https://github.com/jmsmediagroup/hardware-clinic/releases/download/v1.0.0-rc8/hardware-clinic-1.0.0-rc8.img) · 64 MB | Put both in one folder and double-click the `.command`. |
+| **Linux** | [**hardware-clinic-1.0.0-rc8.img**](https://github.com/jmsmediagroup/hardware-clinic/releases/download/v1.0.0-rc8/hardware-clinic-1.0.0-rc8.img) · 64 MB | `sudo dd if=hardware-clinic-1.0.0-rc8.img of=/dev/sdX bs=1M conv=fsync` or [`tools/flash.sh`](tools/flash.sh) |
+| Virtual machine | [hardware-clinic-1.0.0-rc8.iso](https://github.com/jmsmediagroup/hardware-clinic/releases/download/v1.0.0-rc8/hardware-clinic-1.0.0-rc8.iso) · 64 MB | Boot it as a CD image. |
+
+**Version 1.0.0-rc8** · free for personal use · the stick boots UEFI PCs and Intel Macs (not Apple Silicon) ·
+[all files and checksums](https://github.com/jmsmediagroup/hardware-clinic/releases/latest)
+
 <p align="center">
   <img src="docs/images/demo.gif" alt="Hardware Clinic demo: the boot menu, then System info, Drive health with three HEALTHY drives, and a four-core memory test that passes clean" width="820">
 </p>
@@ -51,10 +63,7 @@ a key, so its output is marked NOT SIGNED.
 |:---:|:---:|
 | <img src="docs/images/help.png" alt="Help overlay grouping tools by symptom: won't boot, crashes sometimes, before it leaves" width="420"> | <img src="docs/images/scan.png" alt="Hardware scan results: sensors, peripherals, PCIe, error log, network, security and storage layout" width="420"> |
 
-## Get it — the easy way
-
-Download from the [latest release](https://github.com/jmsmediagroup/hardware-clinic/releases/latest),
-then:
+## Making the stick
 
 - **Windows:** run `Make-Hardware-Clinic-Stick.exe`. It lists only USB sticks, shows the model and size,
   asks you to confirm, and writes the stick. (Windows will ask for administrator permission and may show
@@ -68,7 +77,7 @@ then:
 > built and structurally verified but has not yet been run on a real machine. They only ever offer removable USB drives — never internal disks — and show you exactly
 > which drive before writing. If in doubt, use the manual commands below.
 
-## Get it — manually
+## Making the stick by hand
 1. Download `hardware-clinic-<version>.img` and check it against `SHA256SUMS`.
 2. Write it to a USB stick (**this erases the stick**):
    - **macOS:** `diskutil unmountDisk /dev/diskN && sudo dd if=hardware-clinic-<version>.img of=/dev/rdiskN bs=1m`
