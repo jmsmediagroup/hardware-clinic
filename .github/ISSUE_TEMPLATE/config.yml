@@ -4,7 +4,7 @@ contact_links:
     url: https://github.com/jmsmediagroup/hardware-clinic/discussions
     about: Ask in Discussions. If you have already booted it, the Machine report form above is what I need.
   - name: Security problem (wrong PASS on a wipe, write to an unselected drive, forged certificate)
-    url: https://github.com/jmsmediagroup/hardware-clinic/blob/main/SECURITY.md
+    url: https://github.com/jmsmediagroup/hardware-clinic/security/policy
     about: Report privately by email — please do not open a public issue for these.
   - name: Commercial, fleet and redistribution licensing
     url: https://github.com/jmsmediagroup/hardware-clinic/blob/main/COMMERCIAL.md

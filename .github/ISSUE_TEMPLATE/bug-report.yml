@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        **If a wipe reported PASS while data was still readable, or the tool wrote to a drive you did not select — stop.** That is a critical bug; report it privately as described in [SECURITY.md](https://github.com/jmsmediagroup/hardware-clinic/blob/main/SECURITY.md), not here.
+        **If a wipe reported PASS while data was still readable, or the tool wrote to a drive you did not select — stop.** That is a critical bug; report it privately as described in [SECURITY.md](https://github.com/jmsmediagroup/hardware-clinic/security/policy), not here.
 
         For "it works but reads something wrong on my machine", the [machine report](https://github.com/jmsmediagroup/hardware-clinic/issues/new?template=machine-report.yml) form is the better fit.
   - type: input

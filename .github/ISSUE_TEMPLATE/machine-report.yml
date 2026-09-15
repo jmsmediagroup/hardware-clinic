@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks — every report becomes a row in [COMPATIBILITY.md](https://github.com/jmsmediagroup/hardware-clinic/blob/main/COMPATIBILITY.md) and drives the next fix.
+        Thanks — every report becomes a row in [COMPATIBILITY.md](https://github.com/jmsmediagroup/hardware-clinic/blob/main/docs/COMPATIBILITY.md) and drives the next fix.
         Boot the stick, run **Quick check** and **Sensors**, then **Save all** (`s`). The files are in the root of the stick.
         The JSON contains hardware identifiers only, no personal data — delete the serial number if you prefer.
   - type: input

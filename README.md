@@ -11,7 +11,7 @@ program, built from scratch with no libraries. Works on any UEFI PC and Intel Ma
 ![License](https://img.shields.io/badge/license-proprietary%20freeware-blue)
 
 <p align="center">
-  <img src="screenshots/demo.gif" alt="Hardware Clinic demo: the boot menu, then System info, Drive health with three HEALTHY drives, and a four-core memory test that passes clean" width="820">
+  <img src="docs/images/demo.gif" alt="Hardware Clinic demo: the boot menu, then System info, Drive health with three HEALTHY drives, and a four-core memory test that passes clean" width="820">
 </p>
 <p align="center"><sub>The rc8 image booted in QEMU/OVMF: menu → System info → Drive health → Memory test on 4 cores. Same UI on real hardware.</sub></p>
 
@@ -38,17 +38,18 @@ password there is nothing any tool can do.
 - **Fix & rescue** — "Save my files" for anyone; **Advanced rescue** (`a`) to pick exact folders off an
   NTFS, ext4 or APFS drive that won't boot; clone a failing drive around its bad sectors; repair boot
   entries and destroyed partition tables.
-- **Certify** — secure wipe with a signed certificate (text, printable HTML, and an on-screen QR a
-  phone can verify), for resale and disposal.
+- **Certify** — secure wipe with a certificate (text, printable HTML, and an on-screen QR), signed
+  when you install your own key, for resale and disposal.
 
-Every result is signed with the stick's own key; `tools/verify.py` checks any report, certificate or
-QR later.
+Results can be signed with your own Ed25519 key (see the [fleet guide](docs/FLEET-GUIDE.md)), and
+`tools/verify.py` checks any signed report, certificate or QR later. The download itself ships without
+a key, so its output is marked NOT SIGNED.
 
 ## Screenshots
 
-| Built-in guide — which tool for which complaint (press `?`) | Structured, signed results (Hardware scan) |
+| Built-in guide — which tool for which complaint (press `?`) | Structured results (Hardware scan) |
 |:---:|:---:|
-| <img src="screenshots/help.png" alt="Help overlay grouping tools by symptom: won't boot, crashes sometimes, before it leaves" width="420"> | <img src="screenshots/scan.png" alt="Hardware scan results: sensors, peripherals, PCIe, error log, network, security and storage layout" width="420"> |
+| <img src="docs/images/help.png" alt="Help overlay grouping tools by symptom: won't boot, crashes sometimes, before it leaves" width="420"> | <img src="docs/images/scan.png" alt="Hardware scan results: sensors, peripherals, PCIe, error log, network, security and storage layout" width="420"> |
 
 ## Get it — the easy way
 
@@ -60,7 +61,9 @@ then:
   a SmartScreen warning because the program is new and unsigned — choose *More info → Run anyway*.)
 - **macOS:** put `Make-Hardware-Clinic-Stick.command` in the same folder as the `.img` and double-click it.
   If macOS says it's from an unidentified developer: right-click → Open → Open. It uses the normal
-  macOS dialogs and password prompt.
+  macOS dialogs and password prompt. **Known issue on macOS 26:** the rc8 macOS stick maker stops with
+  "Writing failed — try another USB port" because macOS blocks its write. A fix is being tested; until
+  then use the manual macOS command below, which worked on macOS 26.2.
 - **Linux:** `tools/flash.sh hardware-clinic-<version>.img`.
 
 > **Both stick makers are beta.** They were built and structurally verified but have not yet been run on
@@ -90,7 +93,7 @@ are unavailable until the mode is switched to AHCI. The tool tells you when this
 
 Every build runs a QEMU/OVMF regression bench (NVMe + SATA SMART, 4-core memory test, NTFS / ext4 /
 APFS rescue, GPT rebuild, wipe-all, signed upload). Real firmware is where the surprises live, and the
-machines it has run on so far are in [COMPATIBILITY.md](COMPATIBILITY.md) — one laptop so far, and that
+machines it has run on so far are in [COMPATIBILITY.md](docs/COMPATIBILITY.md) — one laptop so far, and that
 one produced three fixes.
 
 **Booted it on something?** Send a [machine report](https://github.com/jmsmediagroup/hardware-clinic/issues/new?template=machine-report.yml)
@@ -106,12 +109,22 @@ one produced three fixes.
 | Covers | diagnose, rescue, clone, boot / partition repair, wipe — one tool | very broad third-party toolkit | broad, aging toolkit | memory only | partitioning, erase, recovery | wipe only | wipe only |
 | One-click file rescue for non-technical users | yes | no | no | n/a | no | no | no |
 | Intel Macs | yes | PC-focused | legacy BIOS only | yes | yes | legacy BIOS only | UEFI + legacy; untested on Macs |
-| Wipe certificate | Ed25519-signed text + HTML + on-screen QR | no | no | n/a | erase report | no | PDF report |
+| Wipe certificate | text + HTML + on-screen QR, Ed25519-signed with your own key | no | no | n/a | erase report | no | PDF report |
 | Cost | free for personal use; commercial licence | free | free | free / Pro | from $15 | free, unmaintained since 2015 | free, open source |
 
 The honest trade-off: Hardware Clinic is closed source and can only see what the firmware exposes; the
 Linux-based tools carry drivers for far more hardware. Competitor details as of September 2026, from
 their public pages — corrections welcome, open an issue.
+
+## Documentation
+
+| Guide | For |
+|---|---|
+| [User guide](docs/USER-GUIDE.md) | Making the stick, booting, every menu item, reading verdicts, secure wipe |
+| [Fleet guide](docs/FLEET-GUIDE.md) | Unattended mode, `CLINIC.CFG`, signing keys and verification |
+| [File formats](docs/FILE-FORMATS.md) | RESULT JSON, reports, certificates, signatures |
+| [Compatibility](docs/COMPATIBILITY.md) | Machines it has been tested on |
+| [Security policy](.github/SECURITY.md) | Reporting a wipe or signing problem privately |
 
 ## Free vs. commercial
 Free for personal, non-commercial use. **Repair shops, IT departments and any business use need a

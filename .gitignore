@@ -17,3 +17,7 @@ CLINIC.CFG
 
 # OS cruft
 .DS_Store
+
+# Release assets live on the Releases page, not in the source listing
+/BOOTX64.EFI
+/SHA256SUMS

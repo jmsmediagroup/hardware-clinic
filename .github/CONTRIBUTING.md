@@ -13,7 +13,7 @@ up on real machines.
    only, no personal data; delete the serial number if you prefer.
 3. Say what didn't match reality: a drive with no SMART, a fan that spins but reads 0, a wrong verdict.
 
-Reports become rows in [COMPATIBILITY.md](COMPATIBILITY.md) and drive the fixes — rc6 and rc7 both
+Reports become rows in [COMPATIBILITY.md](../docs/COMPATIBILITY.md) and drive the fixes — rc6 and rc7 both
 came straight out of the first one.
 
 ## Add a laptop's fan / temperature map

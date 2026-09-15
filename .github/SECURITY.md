@@ -1,5 +1,23 @@
 # Security policy
 
+## Key compromise notice — 15 September 2026
+
+The downloads published for **1.0.0-rc7** (13 September) and **1.0.0-rc8** (14 September) — the `.img`,
+`.iso` and the Windows `.exe` — accidentally contained the developer's private signing key (`KEY.BIN`).
+That key is **compromised**: anyone who downloaded those files can produce reports and wipe
+certificates that verify.
+
+**Do not trust any report, certificate or QR signed with this public key:**
+
+`677f1662a86c1741a1270db587c679704f1b428f11e4d015d0db4e7e03cdc17d`
+
+On 15 September the downloads were replaced with images that contain **no** signing key. If you made a
+stick from an earlier download, delete `KEY.BIN` from the stick's root folder or flash it again. Its
+output is then marked NOT SIGNED until you install your own key (see the
+[fleet guide](../docs/FLEET-GUIDE.md)). Public downloads will not ship with a signing key again.
+
+## Reporting a problem
+
 Hardware Clinic erases drives and signs certificates that people rely on. Three classes of bug are
 critical, and I want to hear about them privately before anyone else does:
 
@@ -35,7 +53,7 @@ A valid signature proves that a file was produced by a stick holding a particula
 not been altered since. It does not prove that the key was kept safe, that the drive was physically
 destroyed, or that the person holding the stick was who they said they were. Treat certificates as
 strong evidence inside a process you control, not as a substitute for one. Details on erase levels and
-verification are in [FLEET-GUIDE.md](FLEET-GUIDE.md) and [FILE-FORMATS.md](FILE-FORMATS.md).
+verification are in [FLEET-GUIDE.md](../docs/FLEET-GUIDE.md) and [FILE-FORMATS.md](../docs/FILE-FORMATS.md).
 
 ## Supported versions
 
