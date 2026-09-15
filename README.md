@@ -61,13 +61,11 @@ then:
   a SmartScreen warning because the program is new and unsigned — choose *More info → Run anyway*.)
 - **macOS:** put `Make-Hardware-Clinic-Stick.command` in the same folder as the `.img` and double-click it.
   If macOS says it's from an unidentified developer: right-click → Open → Open. It uses the normal
-  macOS dialogs and password prompt. **Known issue on macOS 26:** the rc8 macOS stick maker stops with
-  "Writing failed — try another USB port" because macOS blocks its write. A fix is being tested; until
-  then use the manual macOS command below, which worked on macOS 26.2.
+  macOS dialogs and password prompt.
 - **Linux:** `tools/flash.sh hardware-clinic-<version>.img`.
 
-> **Both stick makers are beta.** They were built and structurally verified but have not yet been run on
-> a real machine. They only ever offer removable USB drives — never internal disks — and show you exactly
+> **Both stick makers are beta.** The macOS one has written a real stick on macOS 26.2; the Windows one is
+> built and structurally verified but has not yet been run on a real machine. They only ever offer removable USB drives — never internal disks — and show you exactly
 > which drive before writing. If in doubt, use the manual commands below.
 
 ## Get it — manually

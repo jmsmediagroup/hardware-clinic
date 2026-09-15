@@ -2,6 +2,7 @@
 
 ## 1.0.0-rc8 — Save my files
 - **Re-issued 15 September 2026 (security):** the original rc7 and rc8 downloads contained a private signing key. They were replaced with images that carry no key; the compromised public key is listed in [SECURITY.md](.github/SECURITY.md)
+- **Re-issued 15 September 2026:** the macOS stick maker failed on macOS 26 with "Writing failed — try another USB port": macOS refused raw disk access to the AppleScript-elevated write, even as administrator. It now writes through Apple's `authopen`, checks that the stick unmounted, and shows the real error with a hint if macOS blocks access. Verified by writing a real stick on macOS 26.2
 - **One-click stick makers**: `Make-Hardware-Clinic-Stick.exe` (Windows, self-contained, USB-only, admin-elevated, locked writes) and `Make-Hardware-Clinic-Stick.command` (macOS, native dialogs). Both beta: built and structurally verified, not yet run on real machines
 - **Save my files**: new first menu item and `mode = savefiles`. Surveys every user's folders on every NTFS/ext4/APFS drive and counts by kind (photos, videos, documents, music), estimates time, waits for a USB drive to be plugged in (hot-plug detection), checks free space, copies with a progress bar and ETA, and ends with a plain-language result. Encrypted drives explained in plain words. Nothing on the computer is written
 - Filesystem readers report file sizes (for the survey and progress)
